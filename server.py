@@ -18,7 +18,7 @@ from dataProcessing import welcome_survey,e_survey,match_1,match_2, mall_survey,
 
 
 ### data token
-token = ""
+token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVkZW50aWFscyI6InByaXZhdGUtZGF0YS1wbGF0Zm9ybS1rZXkgZm9yIGFscGhhIiwiY3JlYXRlZEF0IjoiMjAyMS0wNi0yOFQxODoxNjoyOC4yNThaIiwiaWF0IjoxNjI0OTA0MTg4fQ.ITcG3EO90Uzc9JZYjE6g5mbmh4kkHBDO6QEumQ8ZruQ'
 
 
 ### session that can be reused for the answer or survey api type
@@ -62,7 +62,7 @@ def data_source():
     global limit
     global df
     if apitype =="answers":
-        df = collectApiData(session=s, apitype=apitype,token=token, survey_id = survey_id)
+        #df = collectApiData(session=s, apitype=apitype,token=token, survey_id = survey_id)
         if survey_id == 1:
             data = welcome_survey(limit=limit,df=df)
         elif survey_id == 78:
@@ -90,59 +90,59 @@ def perspective_thread(manager):
         if survey_id == 1:
             table = Table(
                 {
-                    "0": str,
-                    "1": str,
-                    "2": str,
-                    "3": str,
-                    "4": str,
-                    "5": str,
-                    "6": str,
+                    "country": str,
+                    "city": str,
+                   "sports-Team": str,
+                    "occupation": str,
+                    "education": str,
+                    "marital-Status": str,
+                    "crypto": str,
                 },
                 limit = len(df)
             )
         elif survey_id == 78:
             table= Table(
                 {
-                    "0": str,
-                    "1": str,
-                    "2": str,
-                    "3": str,
-                    "4": str,
-                    "5": str,
-                    "6": str,
-                    "7": str,
-                    "8": str,
-                    "9": str,
+                    "store": str,
+                    "other_1": str,
+                    "last_Visit": str,
+                    "other_2": str,
+                    "reason": str,
+                    "other_3": str,
+                    "mall": str,
+                    "other_4": str,
+                    "last_Purchase": str,
+                    "other_5": str,
                 },
                 limit = len(df)
             )
         elif survey_id==79:
             table= Table(
                 {
-                    "0": str,
-                    "1": str,
-                    "2": str,
-                    "3": str,
-                    "4": str,
-                    "5": str,
-                    "6": str,
-                    "7": str,
+                    "review": str,
+                    "frequency": str,
+                    "aisle": str,
+                    "dislike": str,
+                    "reason": str,
+                    "negative": str,
+                    "market": str,
+                    "products": str,
                 },
                 limit = len(df)
             )
         elif survey_id==94:
             table= Table(
                 {
-                    "0": str,
-                    "1": str,
+                    "match_Winner": str,
+                    "first_Goal": str,
                 },
                 limit = len(df)
             )
         elif survey_id==95:
             table= Table(
                 {
-                    "0": str,
-                    "1": str,
+                    "match_Winner": str,
+                    "first_Goal": str,
                 },
                 limit = len(df)
             )
